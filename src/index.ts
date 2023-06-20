@@ -4,11 +4,16 @@ import * as dotenv from 'dotenv';
 import sampleRouter from './routes/sample.model';
 import { sampleController } from './controllers/sample.controller';
 import { sampleView } from './views/sample.view';
+import Bull from 'bull'
+import { notificationSenderProcess } from './bullProcesses/notificationSender.process';
 
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
+// notification queue
+export const notificationQueue = new Bull('notification');
+notificationQueue.process(notificationSenderProcess)
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
