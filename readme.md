@@ -16,7 +16,7 @@ To start the server, run `npm run dev`. The server will listen on port 3000 by d
 
 To send a notification, make a POST request to `/push/send` with the following JSON payload:
 
-```json
+```ts
 {
     title: string;
     message: string;
