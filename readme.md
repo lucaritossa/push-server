@@ -8,13 +8,12 @@ This is a Node.js server that allows you to send push notifications to your user
 - [Usage](#usage)
   - [Starting the Server](#starting-the-server)
   - [Sending a Notification](#sending-a-notification)
-  - [Bull UI Dashboard](#bull-ui-dashboard)
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/Yousuf-Basir/push-server`
+1. Clone the repository: `git clone https://github.com/lucaritossa/push-server.git`
 2. Install dependencies: `npm install`
-3. Create a Firebase project and get your server key from the Firebase console.
+3. Create a Firebase project and get your server key from the Firebase console. Replace the content of `/firebase/fcm_service_account.json`
 
 ## Usage
 
@@ -28,24 +27,7 @@ npm run dev
 
 ### Sending a Notification
 
-To send a notification, make a POST request to `/push/send` with the following JSON payload:
-
-```json
-{
-    "title": "Notification Title",
-    "message": "Notification Message",
-    "device_token": "device_token_here",
-    "device_type": "android",
-    "target_time": "2023-08-31T10:00:00Z",
-    "time_zone": "Asia/Dhaka"
-}
-```
-
-The `target_time` and `time_zone` fields are optional. If they are not provided, the notification will be sent immediately.
-
-### Bull UI Dashboard
-
-The server uses [Bull](https://optimalbits.github.io/bull/) for queueing notifications. You can access the Bull UI dashboard at `/bull-ui`.
+To send a notification, make a POST request to `/push/send`. The JSON you have to send is the entire JSON content expected by FCM.
 
 ## Contributing
 
