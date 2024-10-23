@@ -11,3 +11,7 @@ node_modules/
 build/
 dist/
 
+!firebase/example.json
+firebase/fcm_service.account.json
+
+
