@@ -12,4 +12,4 @@ build/
 dist/
 
 !firebase/example.json
-firebase/fcm_service.account.json
+src/firebase/fcm_service_account.json
